@@ -6,7 +6,6 @@ export class GetDataService  {
   static async getData(search, route = WIKI_URL) {
     const urlString = route + WIKI_SEARCH + search + WIKI_LIMIT + LIMIT;
     
-    console.log(urlString)
     const response = await fetch(urlString);
     return await response.json();
   }

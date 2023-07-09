@@ -25,16 +25,11 @@ export class InputStore {
 
     if(/^[a-zа-яё0-9\s]+$/.test(checkedValue)) {
       checkedValue = checkedValue.replace(/\s/g, '+');
-      console.log(checkedValue);
     } else {
-      console.log(this.error)
       this.putError(true);
-      console.log(this.error)
       return checkedValue = '';
     }
     return checkedValue;
   
   }
 }
-
-// export const inputStore = new InputStore();
