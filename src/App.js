@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 
 import { useFetching } from "./hooks/useFetching";
 import { GetDataService } from "./api/GetDataService";
-import wikiStore from "./store/WikiStore";
-import { inputStore } from "./store/InputStore";
 import { observer } from "mobx-react-lite";
+import { StoreContext } from "./context/StoreContext";
+import { TEXT_ERROR } from "./config/constants";
 
 
 export const App = observer(() => {
+
+  const { wikiStore } = useContext(StoreContext);
+  const { inputStore } = useContext(StoreContext);
+  const wikipediaSearch = wikiStore.wikiData;
 
   const {
     fetching,
@@ -18,10 +22,10 @@ export const App = observer(() => {
 
     if (result) {
       console.log(result)
-      wikiStore.setData(filterResult(result));
+      wikiStore.putData(filterResult(result));
     }
     if(error) {
-      console.log(error)
+      inputStore.putError(true);
     }
   });
 
@@ -42,18 +46,26 @@ export const App = observer(() => {
 
 
   const handleClick = () => {
-    fetching(inputStore.searchValue);
+    wikiStore.putData([]);
+    inputStore.putError(false);
+    if(inputStore.searchValue) {
+      fetching(inputStore.searchValue);
+    } else {
+      inputStore.putError(true);
+    }
   }
-
+console.log(inputStore.error)
   return (
     <div className="App">
       ABC
 
 <button onClick={handleClick}>Push</button>
-<input onChange={(e) => inputStore.setSearchValue(e)}></input>
+<input onChange={(e) => inputStore.putSearchValue(e)}></input>
 {inputStore.searchValue}
-{wikiStore.wikiData.map(el => <p key={el.id}>{el.title}</p>)}
+{wikipediaSearch.map(el => <p key={el.id}>{el.title}</p>)}
 <a className="button button-primary" id='randomButton' href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random!</a> 
+    {inputStore.error && TEXT_ERROR}
+    
     </div>
   );
 })

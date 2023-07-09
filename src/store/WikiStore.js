@@ -1,15 +1,15 @@
 import { makeAutoObservable } from "mobx";
 
 
-class WikiStore {
+export class WikiStore {
   wikiData = [];
   constructor() {
     makeAutoObservable(this);
   }
 
-  setData(newSearch) {
+  putData(newSearch) {
     this.wikiData = newSearch;
   }
 }
 
-export default new WikiStore();
+// export default new WikiStore();

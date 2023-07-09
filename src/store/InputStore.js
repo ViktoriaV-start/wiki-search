@@ -1,25 +1,40 @@
 import { makeAutoObservable } from "mobx";
 
 
-class InputStore {
+export class InputStore {
   searchValue = '';
+  error = false;
   constructor() {
     makeAutoObservable(this);
   }
 
-  setSearchValue(e) {
-    
+  
+
+  putSearchValue(e) {
     this.searchValue = this.checkInput(e.target.value);
   }
 
+  putError(value) {
+    this.error = value;
+  }
+
   checkInput(value) {
-    
-  //  if (/^[a-zA-Z0-9\s]+$/.test(value)) {
-    let trimedValue = value.trim().slice(0, 255).toLowerCase();
-    console.log(/^[a-zа-яё0-9\s]+$/.test(value))
-    return trimedValue;
-  //  }
+    this.putError(false);
+    let checkedValue = value.trim().slice(0, 255).toLowerCase();
+    if(!checkedValue) return checkedValue = '';
+
+    if(/^[a-zа-яё0-9\s]+$/.test(checkedValue)) {
+      checkedValue = checkedValue.replace(/\s/g, '+');
+      console.log(checkedValue);
+    } else {
+      console.log(this.error)
+      this.putError(true);
+      console.log(this.error)
+      return checkedValue = '';
+    }
+    return checkedValue;
+  
   }
 }
 
-export const inputStore = new InputStore();
+// export const inputStore = new InputStore();
