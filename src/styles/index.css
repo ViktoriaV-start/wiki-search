@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-color: #CFE3E8;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -134,4 +141,163 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.str0 {
+  stroke: #4a7989;
+  stroke-width: 0.39;
+  stroke-miterlimit: 22.9256;
+}
+
+.fil1 {
+  fill: #FFDBB8;
+}
+
+.fil2 {
+  fill: #e6c6a7;
+}
+
+.fil0 {
+  fill: #4a7989;
+}
+
+.fil3 {
+  fill: #6e8e99;
+}
+
+.fil4 {
+  fill: #3c616d;
+}
+
+.svg {
+  margin-left: 2%;
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  width: 5rem;
+  height: 6rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+.header__wrap {
+  background-color: #f0f8ff;
+}
+.header__title {
+  margin-left: 2rem;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #4a7989;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.spinner {
+  border: 0.8rem solid #f3f3f3; /* Light grey */
+  border-top: 0.8rem solid #4a7989;
+  border-bottom: 0.8rem solid #4a7989;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.information {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+}
+
+.content {
+  margin-top: 5rem;
+  text-align: center;
+}
+.content__author {
+  font-size: 2.5rem;
+  color: #31494f;
+  font-weight: 800;
+  margin-top: 3rem;
+}
+.content__text {
+  font-family: "Cormorant Unicase", serif;
+  font-size: 3.5rem;
+  color: #31494f;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 3rem auto 0;
+  width: 1020px;
+  text-align: justify;
+}
+.content__header {
+  font-size: 2rem;
+  color: #31494f;
+  font-weight: 600;
+}
+.content__btn {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #31494f;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media all and (max-width: 1019.9px) {
+  .content__text {
+    width: 80vw;
+    min-width: 200px;
+  }
+}
+.background1 {
+  background-color: #FFF9F0;
+}
+
+.background2 {
+  background-color: #FFEFD6;
+}
+
+.background3 {
+  background-color: #E2FFD6;
+}
+
+.background4 {
+  background-color: #D6EDFF;
+}
+
+.background5 {
+  background-color: #FFE3FD;
+}
+
+.background6 {
+  background-color: #C4FFD3;
+}
+
+.background7 {
+  background-color: #C4CBFF;
+}
+
+.background1,
+.background2,
+.background3,
+.background4,
+.background5,
+.background6,
+.background7 {
+  transition: background 2s;
 }/*# sourceMappingURL=index.css.map */

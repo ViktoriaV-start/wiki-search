@@ -5,6 +5,8 @@ import { GetDataService } from "./api/GetDataService";
 import { observer } from "mobx-react-lite";
 import { StoreContext } from "./context/StoreContext";
 import { TEXT_ERROR } from "./config/constants";
+import { Header } from "./components/Header";
+import { Input } from "./components/Input";
 
 
 export const App = observer(() => {
@@ -45,22 +47,23 @@ export const App = observer(() => {
   };
 
 
-  const handleClick = () => {
-    wikiStore.putData([]);
-    inputStore.putError(false);
-    if(inputStore.searchValue) {
-      fetching(inputStore.searchValue);
-    } else {
-      inputStore.putError(true);
-    }
-  }
+  // const handleClick = () => {
+  //   wikiStore.putData([]);
+  //   inputStore.putError(false);
+  //   if(inputStore.searchValue) {
+  //     fetching(inputStore.searchValue);
+  //   } else {
+  //     inputStore.putError(true);
+  //   }
+  // }
 console.log(inputStore.error)
   return (
     <div className="App">
-      ABC
+      <Header />
+      <Input fetching={fetching}/>
 
-<button onClick={handleClick}>Push</button>
-<input onChange={(e) => inputStore.putSearchValue(e)}></input>
+
+{/* <button onClick={handleClick}>Push</button> */}
 {inputStore.searchValue}
 {wikipediaSearch.map(el => <p key={el.id}>{el.title}</p>)}
 <a className="button button-primary" id='randomButton' href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random!</a> 

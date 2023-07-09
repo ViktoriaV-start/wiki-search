@@ -1,3 +1,52 @@
+$text-color: #31494f;
+$special-color: #4a7989;
 
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #CFE3E8;
+}
 
 @import "norm";
+@import "header";
+@import "information";
+@import "content";
+
+.background1 {
+  background-color: #FFF9F0;
+}
+
+.background2 {
+  background-color: #FFEFD6;
+}
+
+.background3 {
+  background-color: #E2FFD6;
+}
+
+.background4 {
+  background-color: #D6EDFF;
+}
+
+.background5 {
+  background-color: #FFE3FD;
+}
+
+.background6 {
+  background-color: #C4FFD3;
+}
+
+.background7 {
+  background-color: #C4CBFF;
+}
+
+.background1,
+.background2,
+.background3,
+.background4,
+.background5,
+.background6,
+.background7 {
+  transition: background 2s;
+}
