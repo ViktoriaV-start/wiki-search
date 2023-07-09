@@ -1,10 +1,10 @@
-import { limit, url } from '../config/constants';
+import { LIMIT, WIKI_LIMIT, WIKI_SEARCH, WIKI_URL } from '../config/constants';
 
 
 export class GetDataService  {
 
-  static async getData(search, route=url) {
-    const urlString = route + '&search=' + search + '&limit=' + limit + '&format=json&origin=*&formatversion=2';
+  static async getData(search, route = WIKI_URL) {
+    const urlString = route + WIKI_SEARCH + search + WIKI_LIMIT + LIMIT;
     
     console.log(urlString)
     const response = await fetch(urlString);

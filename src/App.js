@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { useFetching } from "./hooks/useFetching";
 import { GetDataService } from "./api/GetDataService";
 import wikiStore from "./store/WikiStore";
-import inputStore from "./store/InputStore";
+import { inputStore } from "./store/InputStore";
 import { observer } from "mobx-react-lite";
-import { limit } from "./config/constants";
+
 
 export const App = observer(() => {
 
@@ -20,13 +20,17 @@ export const App = observer(() => {
       console.log(result)
       wikiStore.setData(filterResult(result));
     }
+    if(error) {
+      console.log(error)
+    }
   });
 
   const filterResult = (arr) => {
     const arrTitles = arr[1];
     const arrLinks = arr[3];
     const filteredResult = [];
-    for (let i = 0; i < limit; i++) {
+    const arrLength = arrTitles.length;
+    for (let i = 0; i < arrLength; i++) {
       filteredResult.push({
         id: i,
         title: arrTitles[i],
