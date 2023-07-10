@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wiki-search/static/css/main.ececaa43.css",
-    "main.js": "/wiki-search/static/js/main.04a1c7ae.js",
+    "main.js": "/wiki-search/static/js/main.7ca427b9.js",
     "index.html": "/wiki-search/index.html",
     "main.ececaa43.css.map": "/wiki-search/static/css/main.ececaa43.css.map",
-    "main.04a1c7ae.js.map": "/wiki-search/static/js/main.04a1c7ae.js.map"
+    "main.7ca427b9.js.map": "/wiki-search/static/js/main.7ca427b9.js.map"
   },
   "entrypoints": [
     "static/css/main.ececaa43.css",
-    "static/js/main.04a1c7ae.js"
+    "static/js/main.7ca427b9.js"
   ]
 }
