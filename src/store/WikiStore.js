@@ -11,5 +11,3 @@ export class WikiStore {
     this.wikiData = newSearch;
   }
 }
-
-// export default new WikiStore();

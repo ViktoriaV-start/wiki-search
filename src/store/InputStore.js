@@ -8,8 +8,6 @@ export class InputStore {
     makeAutoObservable(this);
   }
 
-  
-
   putSearchValue(e) {
     this.searchValue = this.checkInput(e.target.value);
   }
@@ -30,6 +28,5 @@ export class InputStore {
       return checkedValue = '';
     }
     return checkedValue;
-  
   }
 }
